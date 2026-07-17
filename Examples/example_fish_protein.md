@@ -32,30 +32,70 @@
 
 ---
 
-## 步骤三：画面翻译官出词 (`step2_prompt_maker.md`)
+## 步骤三：路径B - ComfyUI 专业工作流提示词 (`step2b_comfyui_prompt.md`)
+
+## 工作流概览
+- **大模型推荐**：SDXL 1.0
+- **角色 LoRA**：（待建设，暂无）
+- **采样器**：DPM++ 2M Karras
+- **迭代步数**：28
+- **CFG Scale**：7.5
+- **生成尺寸**：1344x768（16:9）
+
+---
 
 ### 幕次 1：危机降临
 
-**Midjourney 画面 Prompt:**
-`A terrifying giant frost troll made of ice and dark mist roaring in a dark orchard, macro shot of delicate pink apple blossoms freezing with detailed ice crystals on edges, dramatic stormy sky, cinematic lighting, dark and gloomy atmosphere, Unreal Engine 5 render, highly detailed, 8k, --ar 16:9`
+**正向提示词:**
+`(giant frost troll made of ice and dark mist:1.5), (roaring in a dark orchard:1.3), macro shot of delicate pink apple blossoms freezing with detailed ice crystals on edges, dramatic stormy sky, cinematic lighting, dark and gloomy atmosphere, Unreal Engine 5 render style, hyper-detailed, masterpiece, best quality, 8k`
 
-**Runway/Gen-2 动态 Prompt:**
-`Macro camera slowly zooming in on pink apple blossom as frost and ice crystals form on its petals, dark background`
+**反向提示词:**
+`low quality, worst quality, blurry, deformed, mutated, extra limbs, bad anatomy, watermark, text, signature, jpeg artifacts, ugly, duplicate, morbid, mutilated, out of frame, error, warm lighting, cheerful atmosphere`
+
+**参数建议:**
+- 采样器：DPM++ 2M Karras
+- 步数：28
+- CFG：7.5
+- 种子：-1（随机）
+- Hires.fix：放大算法 R-ESRGAN 4x+，重绘幅度 0.35
+
+**图生视频提示词 (AnimateDiff / SVD):**
+`Macro camera slowly zooming in on pink apple blossom as frost and ice crystals form on its petals, dark background, wind blowing`
 
 ---
 ### 幕次 2：英雄降临
 
-**Midjourney 画面 Prompt:**
-`A futuristic superhero wearing glowing deep blue and silver bio-armor landing dynamically in front of an apple tree, slamming the ground, generating a massive glowing transparent blue energy shield dome protecting the tree, dark stormy background outside the shield, cinematic action shot, glowing rim light, high contrast, cyberpunk vibe, masterpiece, --ar 16:9`
+**正向提示词:**
+`(futuristic superhero wearing glowing deep blue and silver bio-armor:1.5), (landing dynamically in front of an apple tree:1.4), (slamming the ground:1.3), massive glowing transparent blue energy shield dome protecting the tree, dark stormy background outside the shield, cinematic action shot, glowing rim light, high contrast, cyberpunk vibe, masterpiece, best quality, ultra-detailed, 8k`
 
-**Runway/Gen-2 动态 Prompt:**
-`Slow motion, superhero hits the ground and a glowing blue energy shield rapidly expands outwards, camera circling`
+**反向提示词:**
+`low quality, worst quality, blurry, deformed, mutated, extra limbs, bad anatomy, watermark, text, signature, jpeg artifacts, ugly, duplicate, morbid, mutilated, out of frame, error, static pose, dull colors, low contrast, no shield`
+
+**参数建议:**
+- 采样器：DPM++ 2M Karras
+- 步数：30
+- CFG：8
+- 种子：-1（随机）
+- Hires.fix：放大算法 R-ESRGAN 4x+，重绘幅度 0.4
+
+**图生视频提示词 (AnimateDiff / SVD):**
+`Slow motion, superhero hits the ground and a glowing blue energy shield rapidly expands outwards, camera circling, screen shake effect`
 
 ---
 ### 幕次 3：逆转生机
 
-**Midjourney 画面 Prompt:**
-`Close up of vibrant pink apple blossoms glowing with a soft blue magical aura inside a protective transparent shield, frost melting away, warm cinematic lighting contrasting with the dark cold outside, extreme macro, hyper-realistic, vivid colors, depth of field, --ar 16:9`
+**正向提示词:**
+`(vibrant pink apple blossoms glowing with soft blue magical aura:1.5), (inside a protective transparent shield:1.3), frost melting away, warm cinematic lighting contrasting with dark cold outside, extreme macro, hyper-realistic, vivid colors, depth of field, masterpiece, best quality, 8k`
 
-**Runway/Gen-2 动态 Prompt:**
-`Ice crystals melting quickly off the vibrant pink flower petals, soft glowing blue light pulsing`
+**反向提示词:**
+`low quality, worst quality, blurry, deformed, mutated, extra limbs, bad anatomy, watermark, text, signature, jpeg artifacts, ugly, duplicate, morbid, mutilated, out of frame, error, dark gloomy lighting, frozen petals, cold colors`
+
+**参数建议:**
+- 采样器：DPM++ 2M Karras
+- 步数：28
+- CFG：7.5
+- 种子：-1（随机）
+- Hires.fix：放大算法 R-ESRGAN 4x+，重绘幅度 0.35
+
+**图生视频提示词 (AnimateDiff / SVD):**
+`Ice crystals melting quickly off the vibrant pink flower petals, soft glowing blue light pulsing, camera slowly pulling back to wide shot`
