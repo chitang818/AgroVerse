@@ -20,10 +20,13 @@
 2. **主体优先**：重要元素放在前面，用权重加强
 3. **反向提示词**：排除低质量、变形、水印等
 4. **分层描述**：主体 → 环境 → 光影 → 镜头 → 风格 → 画质
+5. **遥马品牌英文视觉特征融合**：
+   - 守护者微观特征：`(green and gold glowing microscopic active agent:1.3), (molecular chains aligning to form a subtle flying horse pattern:1.3), 3D biological structure, fluorescence`（绿金发光微观活性制剂，分子链排列形成隐约的天马图腾，3D生物结构，荧光）
+   - 第三幕品牌Logo定格特征：`transition from microscopic cells to macroscopic vineyard, zoom out, (glowing golden flying horse logo:1.4), (text of "YAOMA AGRICULTURE":1.3) floating, golden particles, triumph harvest atmosphere`（从微观细胞过渡到宏观果园，镜头向外拉，发光的金色天马Logo，"YAOMA AGRICULTURE"文本浮现，金色粒子，胜利丰收氛围）
 
 ## 提示词公式
 **正向提示词**：
-`(主体描述:1.5)` + `[环境与背景]` + `[光影与色彩]` + `[镜头视角与构图]` + `[艺术风格]` + `[画质增强词]`
+`(主体描述:1.5)` + `[遥马品牌微观/定格特征]` + `[显微/宏观环境与背景]` + `[光影与色彩]` + `[镜头视角与构图]` + `[科学艺术风格]` + `[画质增强词]`
 
 **反向提示词**（通用）：
 `low quality, worst quality, blurry, deformed, mutated, extra limbs, bad anatomy, watermark, text, signature, jpeg artifacts, ugly, duplicate, morbid, mutilated, out of frame, error, missing fingers, fused fingers, poorly drawn face, poorly drawn hands`
@@ -69,8 +72,27 @@
 `[简短英文动作描述，如: camera slowly zooming in, leaves swaying, particles floating]`
 
 ---
-### 幕次 2：...
-(以此类推)
+### 幕次 2：[对应中文幕的简短标题]
+(以此类推，画面需包含绿金色活性分子及微观天马标志细节)
+
+---
+### 幕次 3：逆转制胜 (Brand Triumph)
+
+**正向提示词:**
+`transition from microscopic cell wall to macroscopic bumper harvest field, zoom out, brand presentation, (glowing golden flying horse logo:1.4), (text of "YAOMA AGRICULTURE":1.3) floating in center, green and gold theme, warm sunlight, (golden energy particles:1.2), cinematic lighting, masterpiece, best quality, 8k`
+
+**反向提示词:**
+`low quality, worst quality, deformed, blurry, lowres, text, watermark`
+
+**参数建议:**
+- 采样器：DPM++ 2M Karras
+- 步数：30
+- CFG：7.5
+- 种子：-1 (随机)
+- Hires.fix（高清修复）：放大算法 [R-ESRGAN 4x+]，重绘幅度 [0.35]
+
+**图生视频提示词 (AnimateDiff / SVD):**
+`golden particles slowly floating, light rays shining, camera slowly zooming out, green fields waving`
 ```
 
 ## 角色一致性说明

@@ -12,7 +12,12 @@
    - 👾 破坏者联盟 (Destroyers)：各种病虫害（如：红蜘蛛、霜霉病）。
    - 🌱 大地子民 (Earthlings)：农作物、土壤环境（如：苹果树、干旱的土地）。
 2. **[02_Workflows (工作流)](./02_Workflows/)** - **核心生产线**：
-   - ✍️ `step1_script_writer` (编剧)：负责根据选定的角色，写出精彩的 15 秒、3幕剧的中文分镜脚本，包含字幕文案和完整配音稿。
+   - ✍️ **编剧大师 (Script Writer)**：根据选定的角色与冲突，快速生成 10-15 秒的三幕剧短视频分镜脚本。我们提供了 5 种不同流派的编剧：
+     - 🔬 **[硬核科普风](./02_Workflows/step1_script_writer.md)** - 3D显微镜级科普，科学客观（默认）。
+     - 🔥 **[热血动漫风](./02_Workflows/step1_script_writer_anime.md)** - 中二激燃，大魔王 vs 守护神，技能特效拉满。
+     - 🤪 **[爆笑整活风](./02_Workflows/step1_script_writer_comedy.md)** - 玩梗搞笑，电影解说风，大反差拟人，趣味吸粉。
+     - 🎤 **[农技说书风](./02_Workflows/step1_script_writer_storyteller.md)** - 接地气单口评书，押韵顺口溜，深入传统散户。
+     - 🎬 **[治愈纪录片风](./02_Workflows/step1_script_writer_documentary.md)** - 舌尖中国风情，温情诗意，塑造高端品牌形象。
    - 🚀 `step2a_jimeng_prompt` (路径A：快速出片)：将脚本转化为即梦/豆包等一站式工具可用的完整中文视频提示词，直接生成带音频的视频。
    - 🎬 `step2b_comfyui_prompt` (路径B：专业精细)：将脚本转化为 ComfyUI 节点工作流可用的提示词（正向/反向/参数/LoRA），本地部署，精细控制画面质量和角色一致性。
 3. **[Examples (案例展示)](./Examples/)** - **成片库**：
@@ -23,7 +28,7 @@
 ### 标准流程（两步走）
 
 1. **第一步（选角）**：从 `01_Characters` 中挑选出所需角色的设定（例如："红蜘蛛"和"杀虫剂"）。
-2. **第二步（编剧）**：将选好的角色设定丢给 `02_Workflows/step1_script_writer.md` 技能，它将输出极其精彩的 15 秒中文配音、画面描述、字幕文案。
+2. **第二步（编剧）**：根据受众和推广渠道，选择一位**编剧大师**（例如：若是年轻客户选 [热血动漫风](./02_Workflows/step1_script_writer_anime.md)；若是下沉市场选 [农技说书风](./02_Workflows/step1_script_writer_storyteller.md)；默认选 [硬核科普风](./02_Workflows/step1_script_writer.md)）。将挑选好的角色设定丢给它，它将输出精彩的 10-15 秒中文配音、画面描述与字幕文案。
 
 ### 第三步：二选一输出路径
 
